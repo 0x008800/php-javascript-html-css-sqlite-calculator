@@ -1,8 +1,8 @@
 <?php
 setcookie("todayDate", date('l \t\h\e jS'));
 
-	//echo $_POST['password'];
-	//echo $_POST['mail'];
+//	echo $_POST['password'];
+//	echo $_POST['email'];
    class MyDB extends SQLite3
    {
       function __construct()
@@ -17,18 +17,18 @@ setcookie("todayDate", date('l \t\h\e jS'));
    if(!$db){
       echo $db->lastErrorMsg();
    } else {
-     // echo "Opened database successfully\n";
+  //    echo "Opened database successfully\n";
    }
 
    $sql =<<<EOF
-      SELECT * from user_id;
+      SELECT * from users;
 EOF;
 $ret = $db->query($sql);
 
 while($row = $ret->fetchArray(SQLITE3_ASSOC) ){
-     // echo "mail = ". $row['mail'] . "\n";
-     //  echo "password = ". $row['password'] ."\n";
-	if(($_POST['mail'] === $row['mail'])&($_POST['password'] === $row['password'] )){ 
+    //  echo "email = ". $row['email'] . "\n";
+    //  echo "password = ". $row['password'] ."\n";
+	if(($_POST['email'] === $row['email'])&($_POST['password'] === $row['password'] )){ 
 		header ('Location: calc.php'); 
 		exit();
 	}

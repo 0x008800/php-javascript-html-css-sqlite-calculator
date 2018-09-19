@@ -6,25 +6,25 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script type="text/javascript">
 		
-		    function validate(mail, pass)  
+		    function validate(email, pass)  
     {  
     
-    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    var emailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     
-    if((pass.value === "")||(mail.value === "")){
+    if((pass.value === "")||(email.value === "")){
     		alert("Заполните все поля!!!");
     		return false;
     	}
     	  
-    if(mail.value.match(mailformat))  
+    if(email.value.match(emailformat))  
     { 
-    document.form.text.focus();
+    document.form.email.focus();
     		return true;
     }  
     else  
     {  
     alert("Введите корректный @mail");  
-    document.form.text.focus();  
+    document.form.email.focus();  
     return false;  
     }  
     }  
@@ -35,9 +35,9 @@
 <div class="wrapper">
 	<div class="login">
 		<form action="login.php" method="post" name="form">
-			<input type="text" name="mail"><br>
+			<input type="text" name="email"><br>
 			<input type="password" name="password"><br>
-			<input type="submit" name="submit" value="login" onclick="validate(document.form.mail, 
+			<input type="submit" name="submit" value="login" onclick="validate(document.form.email, 
 			document.form.password)">
 		</form>
 	</div>
